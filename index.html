@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<script type="text/javascript" nonce="adad4abe8e2e466792cd0fc37dd" src="//local.adguard.org?ts=1785713034033&amp;type=content-script&amp;dmn=claude.ai&amp;url=https%3A%2F%2Fclaude.ai%2Fdesign%2Fv1%2Fdesign%2Fprojects%2Fbbc42d80-b3e2-486c-88c5-d189595e43cb%2Fdownload%3Fpath%3Dsite%252Findex.html&amp;app=chrome.exe&amp;css=2&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1&amp;stealth=1&amp;st-dnt"></script><script type="text/javascript" nonce="adad4abe8e2e466792cd0fc37dd" src="//local.adguard.org?ts=1785713034033&amp;name=AdGuard%20Assistant&amp;name=AdGuard%20Extra&amp;type=user-script"></script><script src="./support.js"></script>
 </head>
 <body>
 <template id="__bundler_thumbnail">
@@ -30,6 +30,20 @@
   @keyframes kbr { from { transform: scale(1.12); } to { transform: scale(1.0); } }
   @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
   @keyframes fadeup { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 768px) {
+    .nav-textlinks { display: none !important; }
+    #location, #rooms, #gallery, #house { padding-left: 20px !important; padding-right: 20px !important; padding-top: 76px !important; padding-bottom: 76px !important; }
+    #testimonials { padding: 56px 20px !important; }
+    #contact { padding-left: 20px !important; padding-right: 20px !important; padding-top: 96px !important; padding-bottom: 96px !important; }
+    .loc-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+    .stat4 { grid-template-columns: 1fr 1fr !important; }
+    .loft-grid { grid-template-columns: 1fr !important; gap: 30px !important; }
+    .gallery-grid { grid-template-columns: 1fr 1fr !important; grid-auto-rows: 150px !important; }
+    .gallery-grid figure { grid-column: auto !important; grid-row: auto !important; }
+    .ess-grid { grid-template-columns: 1fr 1fr !important; }
+    .test-grid { grid-template-columns: 1fr !important; gap: 34px !important; }
+    .hero-sharp { object-fit: cover !important; }
+  }
 </style>
 </helmet>
 
@@ -39,10 +53,12 @@
   <nav style="{{ navStyle }}" __nav>
     <div style="max-width:1280px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between;">
       <a href="#top" style="color:#f2eee5; font-family:'Jost',sans-serif; font-weight:500; letter-spacing:0.32em; font-size:15px;">459 LOWES</a>
-      <div style="display:flex; align-items:center; gap:34px;" __navlinks>
-        <a href="#rooms" style="color:#f2eee5; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; opacity:0.85;">The Rooms</a>
-        <a href="#gallery" style="color:#f2eee5; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; opacity:0.85;">Gallery</a>
-        <a href="#house" style="color:#f2eee5; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; opacity:0.85;">The House</a>
+      <div style="display:flex; align-items:center; gap:24px;" class="nav-menu" __navlinks>
+        <span class="nav-textlinks" style="display:flex; align-items:center; gap:34px;">
+          <a href="#rooms" style="color:#f2eee5; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; opacity:0.85;">The Rooms</a>
+          <a href="#gallery" style="color:#f2eee5; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; opacity:0.85;">Gallery</a>
+          <a href="#house" style="color:#f2eee5; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; opacity:0.85;">The House</a>
+        </span>
         <a href="tel:19375463991" style="display:inline-block; padding:11px 22px; background:#d98a3c; color:#14171d; font-weight:500; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; border-radius:2px;" style-hover="background:#eaa457;">Book a Tour</a>
       </div>
     </div>
@@ -78,7 +94,7 @@
 
   <!-- ===== LOCATION ===== -->
   <section id="location" data-screen-label="Location" style="background:#14171d; color:#f2eee5; padding:120px 32px;">
-    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+    <div class="loc-grid" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
       <div>
         <div style="font-size:13px; letter-spacing:0.3em; text-transform:uppercase; color:#d98a3c; margin-bottom:22px;">The Location</div>
         <h2 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(2.2rem,4.4vw,3.8rem); line-height:1.06; margin:0; max-width:16ch;">A few minutes from the University of Dayton campus.</h2>
@@ -113,14 +129,14 @@
         <div style="position:absolute; left:0; bottom:0; right:0; padding:26px 28px; background:linear-gradient(0deg,rgba(0,0,0,0.6),transparent); color:#faf7f0; font-size:14px; letter-spacing:0.14em; text-transform:uppercase;">Loft removed &nbsp;·&nbsp; New carpet &nbsp;·&nbsp; Full bed + desk</div>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; margin-top:1px; background:#d8d2c4;">
+      <div class="stat4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; margin-top:1px; background:#d8d2c4;">
         <div style="background:#f2eee5; padding:34px 24px; text-align:center;"><div style="font-family:'Cormorant Garamond',serif; font-size:2rem; color:#b47432;">01</div><div style="font-size:13px; letter-spacing:0.14em; text-transform:uppercase; margin-top:10px; color:#3a3d42;">New carpet throughout</div></div>
         <div style="background:#f2eee5; padding:34px 24px; text-align:center;"><div style="font-family:'Cormorant Garamond',serif; font-size:2rem; color:#b47432;">02</div><div style="font-size:13px; letter-spacing:0.14em; text-transform:uppercase; margin-top:10px; color:#3a3d42;">Lofts removed</div></div>
         <div style="background:#f2eee5; padding:34px 24px; text-align:center;"><div style="font-family:'Cormorant Garamond',serif; font-size:2rem; color:#b47432;">03</div><div style="font-size:13px; letter-spacing:0.14em; text-transform:uppercase; margin-top:10px; color:#3a3d42;">Real desks</div></div>
         <div style="background:#f2eee5; padding:34px 24px; text-align:center;"><div style="font-family:'Cormorant Garamond',serif; font-size:2rem; color:#b47432;">04</div><div style="font-size:13px; letter-spacing:0.14em; text-transform:uppercase; margin-top:10px; color:#3a3d42;">Open floor space</div></div>
       </div>
 
-      <div style="display:grid; grid-template-columns:3fr 2fr; gap:48px; align-items:center; margin-top:88px;">
+      <div class="loft-grid" style="display:grid; grid-template-columns:3fr 2fr; gap:48px; align-items:center; margin-top:88px;">
         <div style="position:relative; overflow:hidden; border-radius:4px;">
           <img src="assets/photos/1st-floor-room.png" alt="Room that keeps its loft with a new full-size desk" style="width:100%; height:440px; object-fit:cover;">
         </div>
@@ -139,7 +155,7 @@
       <div style="font-size:13px; letter-spacing:0.3em; text-transform:uppercase; color:#d98a3c; margin-bottom:20px;">The Walk-Through</div>
       <h2 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(2.4rem,5.5vw,4.6rem); line-height:1.02; margin:0 0 56px;">Take a look around.</h2>
 
-      <div style="display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:220px; gap:14px;" onClick="{{ openImg }}">
+      <div class="gallery-grid" style="display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:220px; gap:14px;" onClick="{{ openImg }}">
         <figure style="position:relative; overflow:hidden; margin:0; cursor:zoom-in; grid-column:span 4; grid-row:span 2; border-radius:3px;">
           <img src="assets/photos/common-bright.jpg" alt="Furnished common lounge" style="width:100%; height:100%; object-fit:cover; transition:transform 0.9s ease;" style-hover="transform:scale(1.05);">
           <figcaption style="position:absolute; left:0; bottom:0; padding:18px 20px; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; background:linear-gradient(0deg,rgba(0,0,0,0.7),transparent); width:100%;">Common lounge</figcaption>
@@ -185,7 +201,7 @@
     <div style="max-width:1100px; margin:0 auto;">
       <div style="font-size:13px; letter-spacing:0.3em; text-transform:uppercase; color:#b47432; margin-bottom:20px;">The Essentials</div>
       <h2 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(2.4rem,5.5vw,4.6rem); line-height:1.02; margin:0 0 56px;">Built for six.</h2>
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:#d8d2c4; border:1px solid #d8d2c4;">
+      <div class="ess-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:#d8d2c4; border:1px solid #d8d2c4;">
         <div style="background:#f2eee5; padding:40px 32px;"><div style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#9a8f7d;">Sleeps</div><div style="font-family:'Cormorant Garamond',serif; font-size:1.9rem; margin-top:8px;">6 students</div></div>
         <div style="background:#f2eee5; padding:40px 32px;"><div style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#9a8f7d;">Location</div><div style="font-family:'Cormorant Garamond',serif; font-size:1.9rem; margin-top:8px;">Near UD, Dayton</div></div>
         <div style="background:#f2eee5; padding:40px 32px;"><div style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#9a8f7d;">Furnished</div><div style="font-family:'Cormorant Garamond',serif; font-size:1.9rem; margin-top:8px;">Beds, desks, sofas</div></div>
@@ -198,7 +214,7 @@
 
   <!-- ===== TESTIMONIALS ===== -->
   <section id="testimonials" data-screen-label="Testimonials" style="background:#a7afaf; color:#1c1f22; padding:64px 40px;">
-    <div style="max-width:1500px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start;">
+    <div class="test-grid" style="max-width:1500px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start;">
       <div>
         <h2 style="font-family:'Jost',sans-serif; font-weight:400; font-size:clamp(2.6rem,5vw,4rem); line-height:1.05; margin:0 0 28px; color:#1c1f22;">Student<br>Testimonials</h2>
         <a href="https://drive.google.com/drive/folders/1nmLICN97aZOIl-wQ8FE7pxivDUxqnOPU" target="_blank" rel="noopener" style="display:block; font-family:'Jost',sans-serif; font-weight:600; font-size:14px; color:#ffffff; margin:0 0 16px;" style-hover="color:#eaa457;">Photo Copyright of University of Dayton</a>
@@ -332,7 +348,7 @@ class Component extends DCLogic {
           }),
           // sharp, fully-visible house (contain) with a slow creep-in
           React.createElement('img', {
-            src, alt: '',
+            src, alt: '', className: 'hero-sharp',
             style: {
               position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain',
               animation: ken ? `${i % 2 ? 'kbr' : 'kb'} 26s ease-out infinite alternate` : 'none',
