@@ -6,6 +6,7 @@
 <script type="text/javascript" nonce="adad4abe8e2e466792cd0fc37dd" src="//local.adguard.org?ts=1785713034033&amp;type=content-script&amp;dmn=claude.ai&amp;url=https%3A%2F%2Fclaude.ai%2Fdesign%2Fv1%2Fdesign%2Fprojects%2Fbbc42d80-b3e2-486c-88c5-d189595e43cb%2Fdownload%3Fpath%3Dsite%252Findex.html&amp;app=chrome.exe&amp;css=2&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1&amp;stealth=1&amp;st-dnt"></script><script type="text/javascript" nonce="adad4abe8e2e466792cd0fc37dd" src="//local.adguard.org?ts=1785713034033&amp;name=AdGuard%20Assistant&amp;name=AdGuard%20Extra&amp;type=user-script"></script><script src="./support.js"></script>
 </head>
 <body>
+
 <template id="__bundler_thumbnail">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
 <rect width="400" height="400" fill="#1a1d23"/>
@@ -29,6 +30,8 @@
   @keyframes kb { from { transform: scale(1.0); } to { transform: scale(1.12); } }
   @keyframes kbr { from { transform: scale(1.12); } to { transform: scale(1.0); } }
   @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
+  @keyframes rStamp { 0% { transform:translate(-50%,-50%) scale(2.6) rotate(-6deg); opacity:0; } 100% { transform:translate(-50%,-50%) scale(1); opacity:.55; } }
+  @keyframes rFade { to { opacity:0; visibility:hidden; } }
   @keyframes fadeup { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
   @media (max-width: 768px) {
     .nav-textlinks { display: none !important; }
@@ -67,6 +70,7 @@
 
   <!-- ===== HERO ===== -->
   <section id="top" data-screen-label="Hero" style="position:relative; height:100vh; min-height:640px; width:100%; overflow:hidden; background:#14171d;">
+    <div aria-hidden="true" style="position:absolute; inset:0; z-index:50; pointer-events:none;"><img src="assets/rented-stamp.svg" alt="" style="position:absolute; left:50%; top:calc(75% + 40px); width:min(56vw,380px); height:auto; transform:translate(-50%,-50%); animation:rStamp .5s cubic-bezier(.2,1.6,.4,1) .4s both;"></div>
     <!-- moving media (cinematic slideshow / video) -->
     {{ heroMedia }}
     <!-- scrims for legibility -->
@@ -77,7 +81,7 @@
       <div style="position:relative; z-index:3; height:100%; max-width:1280px; margin:0 auto; padding:0 32px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
         <div style="font-size:13px; letter-spacing:0.34em; text-transform:uppercase; color:#e7c8a3; margin-bottom:26px;">459 Lowes LLC &nbsp;·&nbsp; Steps from the University of Dayton</div>
         <h1 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(3rem,8vw,7rem); line-height:0.98; margin:0; color:#faf7f0; text-shadow:0 2px 40px rgba(0,0,0,0.4); max-width:16ch;">The Park Place of Student Housing</h1>
-        <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.3rem,2.6vw,2rem); color:#f2eee5; margin:26px 0 0; opacity:0.94;">Newly renovated &mdash; leasing now for the 2027&ndash;2028 school year.</p>
+        <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.3rem,2.6vw,2rem); color:#f2eee5; margin:26px 0 0; opacity:0.94;">Newly renovated &mdash; leasing now for the 2028&ndash;2029 school year.</p>
         <div style="display:flex; gap:16px; margin-top:42px; flex-wrap:wrap; justify-content:center;">
           <a href="tel:19375463991" style="display:inline-block; padding:16px 34px; background:#d98a3c; color:#14171d; font-weight:500; font-size:14px; letter-spacing:0.16em; text-transform:uppercase; border-radius:2px;" style-hover="background:#eaa457;">Book a Tour</a>
           <a href="#rooms" style="display:inline-block; padding:16px 34px; background:rgba(255,255,255,0.08); color:#faf7f0; font-weight:400; font-size:14px; letter-spacing:0.16em; text-transform:uppercase; border-radius:2px; border:1px solid rgba(255,255,255,0.35);" style-hover="background:rgba(255,255,255,0.16);">See what's new</a>
@@ -123,11 +127,11 @@
     <div style="max-width:1200px; margin:0 auto;">
       <div style="font-size:13px; letter-spacing:0.3em; text-transform:uppercase; color:#b47432; margin-bottom:20px;">What Changed</div>
       <h2 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(2.4rem,5.5vw,4.6rem); line-height:1.02; margin:0; max-width:15ch;">We pulled the lofts. You got your room back.</h2>
-      <p style="max-width:52ch; font-size:18px; line-height:1.7; color:#4a4d52; margin:28px 0 0; font-weight:300;">Every bedroom was stripped down and rebuilt for real life &mdash; wall-to-wall new carpet, full beds at floor level, and desks you'll actually use. The same house you know on Lowes, with a lot more room to breathe.</p>
+      <p style="max-width:52ch; font-size:18px; line-height:1.7; color:#4a4d52; margin:28px 0 0; font-weight:300;">Every bedroom was stripped down and rebuilt for real life &mdash; wall-to-wall new carpet, twin beds at floor level, and desks you'll actually use. The same house you know on Lowes, with a lot more room to breathe.</p>
 
       <div style="margin-top:56px; position:relative; overflow:hidden; border-radius:4px;">
         <img src="assets/photos/bed-open.jpg" alt="Renovated bedroom with new carpet and open floor space" style="width:100%; height:min(64vh,620px); object-fit:cover;">
-        <div style="position:absolute; left:0; bottom:0; right:0; padding:26px 28px; background:linear-gradient(0deg,rgba(0,0,0,0.6),transparent); color:#faf7f0; font-size:14px; letter-spacing:0.14em; text-transform:uppercase;">Loft removed &nbsp;·&nbsp; New carpet &nbsp;·&nbsp; Full bed + desk</div>
+        <div style="position:absolute; left:0; bottom:0; right:0; padding:26px 28px; background:linear-gradient(0deg,rgba(0,0,0,0.6),transparent); color:#faf7f0; font-size:14px; letter-spacing:0.14em; text-transform:uppercase;">Loft removed &nbsp;·&nbsp; New carpet &nbsp;·&nbsp; Twin bed + desk</div>
       </div>
 
       <div class="stat4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; margin-top:1px; background:#d8d2c4;">
@@ -208,7 +212,7 @@
         <div style="background:#f2eee5; padding:40px 32px;"><div style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#9a8f7d;">Furnished</div><div style="font-family:'Cormorant Garamond',serif; font-size:1.9rem; margin-top:8px;">Beds, desks, sofas</div></div>
         <div style="background:#f2eee5; padding:40px 32px;"><div style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#9a8f7d;">Laundry</div><div style="font-family:'Cormorant Garamond',serif; font-size:1.9rem; margin-top:8px;">In-unit W/D</div></div>
         <div style="background:#f2eee5; padding:40px 32px;"><div style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#9a8f7d;">Bath</div><div style="font-family:'Cormorant Garamond',serif; font-size:1.9rem; margin-top:8px;">Full + half</div></div>
-        <div style="background:#f2eee5; padding:40px 32px;"><div style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#9a8f7d;">Term</div><div style="font-family:'Cormorant Garamond',serif; font-size:1.9rem; margin-top:8px;">2027&ndash;2028</div></div>
+        <div style="background:#f2eee5; padding:40px 32px;"><div style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#9a8f7d;">Term</div><div style="font-family:'Cormorant Garamond',serif; font-size:1.9rem; margin-top:8px;">Term 2028&ndash;2029</div></div>
       </div>
     </div>
   </section>
@@ -254,7 +258,7 @@
       <div style="margin-top:34px;">
         <a href="tel:19375463991" style="display:inline-block; padding:17px 40px; background:#d98a3c; color:#14171d; font-weight:500; font-size:14px; letter-spacing:0.16em; text-transform:uppercase; border-radius:2px;" style-hover="background:#eaa457;">Text to schedule a tour</a>
       </div>
-      <p style="font-size:14px; color:rgba(242,238,229,0.72); margin-top:26px; letter-spacing:0.04em;">Ask about availability for the 2027&ndash;2028 school year.</p>
+      <p style="font-size:14px; color:rgba(242,238,229,0.72); margin-top:26px; letter-spacing:0.04em;">Ask about availability for the 2028&ndash;2029 school year.</p>
     </div>
   </section>
 
